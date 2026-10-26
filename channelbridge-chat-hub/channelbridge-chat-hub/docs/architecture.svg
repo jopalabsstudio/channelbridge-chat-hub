@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="210" viewBox="0 0 940 210">
+<rect width="940" height="210" rx="16" fill="#f5f7fc"/>
+<g font-family="Arial,sans-serif" font-size="17" text-anchor="middle" fill="#24324c">
+<rect x="25" y="24" width="168" height="50" rx="10" fill="#d8f3e6"/><text x="109" y="55">WhatsApp</text>
+<rect x="25" y="81" width="168" height="50" rx="10" fill="#e3e9fb"/><text x="109" y="112">Messenger</text>
+<rect x="25" y="138" width="168" height="50" rx="10" fill="#d9f0f9"/><text x="109" y="169">Telegram</text>
+<path d="M193 49 H213 M193 106 H213 M193 163 H213 M213 49 V163 M213 106 H248" fill="none" stroke="#8093bd" stroke-width="2"/>
+<rect x="248" y="77" width="170" height="60" rx="10" fill="#e1e8fc"/><text x="333" y="103">Auth + adapter</text><text font-size="13" x="333" y="120">Normalize</text>
+<path d="M418 107 H460" stroke="#8093bd" stroke-width="2"/>
+<rect x="460" y="77" width="188" height="60" rx="10" fill="#dae9f8"/><text x="554" y="102">Unified threads</text><text font-size="13" x="554" y="121">Store + dedupe</text>
+<path d="M648 107 H690" stroke="#8093bd" stroke-width="2"/>
+<rect x="690" y="77" width="225" height="60" rx="10" fill="#e6e6ff"/><text x="803" y="103">Local inbox</text><text font-size="13" x="803" y="121">Reply via original channel</text>
+</g></svg>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChannelBridge — Multi-channel inbox</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">CB</span><div><strong>ChannelBridge</strong><small>One inbox, many channels</small></div></div>
+      <div class="sidebar-label">INBOX</div>
+      <nav aria-label="Channel filter" id="filters" class="filters">
+        <button class="filter active" data-channel="all">All conversations <span id="count-all">0</span></button>
+        <button class="filter" data-channel="whatsapp">WhatsApp <span id="count-whatsapp">0</span></button>
+        <button class="filter" data-channel="messenger">Messenger <span id="count-messenger">0</span></button>
+        <button class="filter" data-channel="telegram">Telegram <span id="count-telegram">0</span></button>
+      </nav>
+      <div class="side-bottom">
+        <div class="sidebar-label">CONNECTORS</div>
+        <div id="connector-status" class="connector-list" aria-live="polite"></div>
+        <p class="side-note">Demo conversations are simulated. Live channels require your own provider credentials and verified webhooks.</p>
+      </div>
+    </aside>
+
+    <section class="thread-list" aria-label="Conversations">
+      <div class="thread-heading"><div><span class="eyebrow">UNIFIED INBOX</span><h1>Conversations</h1></div><span class="total" id="total-threads">0</span></div>
+      <div class="search"><span aria-hidden="true">⌕</span><input id="search" aria-label="Search conversations" placeholder="Search conversations" autocomplete="off" /></div>
+      <div class="list" id="threads" aria-live="polite"></div>
+      <div class="list-footer">Showing a unified view, not merged identities</div>
+    </section>
+
+    <main class="conversation" aria-label="Selected conversation">
+      <header class="conversation-header">
+        <div class="avatar" id="selected-avatar">✦</div>
+        <div class="identity"><h2 id="selected-name">Select a conversation</h2><p id="selected-meta">Messages stay in their original channel.</p></div>
+        <span class="mode-pill" id="selected-mode">LOCAL DEMO</span>
+      </header>
+      <div class="messages" id="messages"><div class="empty"><strong>Welcome to ChannelBridge</strong><p>Choose a conversation to see messages, or create a simulated inbound message below.</p></div></div>
+      <form id="reply-form" class="composer">
+        <label class="sr-only" for="reply-input">Reply</label>
+        <textarea id="reply-input" rows="2" maxlength="2000" placeholder="Select a conversation to reply..." disabled></textarea>
+        <button type="submit" id="send-button" disabled>Send reply <span aria-hidden="true">↗</span></button>
+      </form>
+      <div class="composer-caption" id="composer-note">Demo replies stay local; live replies use the matching provider API.</div>
+    </main>
+  </div>
+
+  <section class="demo-panel" id="demo-panel" aria-label="Simulate incoming message">
+    <div><strong>Test the inbox</strong><p>Simulate an incoming message on any channel. No account or API key is needed.</p></div>
+    <form id="demo-form">
+      <select id="demo-channel" aria-label="Demo channel"><option value="whatsapp">WhatsApp</option><option value="messenger">Messenger</option><option value="telegram">Telegram</option></select>
+      <input id="demo-name" maxlength="100" aria-label="Customer name" value="New Customer" required />
+      <input id="demo-text" maxlength="4000" aria-label="Message text" value="Hi! I have a question about your service." required />
+      <button type="submit">Simulate inbound</button>
+    </form>
+  </section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
